@@ -1,0 +1,19 @@
+//Primeira forma que eu fiz
+
+const aoFiltrarTag = (tag) => {
+	if (tag.id === 0) {
+		setFotosDaGaleria(fotos);
+		return;
+	}
+	setFotoFiltrada(fotos.filter((foto) => foto.tagId === tag.id));
+};
+
+const aoFiltrarInput = (valorInput) => {
+	setFotoFiltrada(
+		fotos.filter((foto) => foto.titulo.toLowerCase().includes(valorInput))
+	);
+};
+
+useEffect(() => {
+	setFotosDaGaleria(fotoFiltrada);
+}, [fotoFiltrada]);
